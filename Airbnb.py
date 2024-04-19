@@ -18,8 +18,8 @@ with row1[0]:
     sub_columns = st.columns(3)
 
     with sub_columns[0]:
-        menu = option_menu("Menu", ["Home","Analysis"], 
-                            icons=["house", "graph-up"],
+        menu = option_menu("Menu", ["Home","Analysis", "About"], 
+                            icons=["house", "graph-up", "exclamation-triangle"],
                             menu_icon="cast",
                             default_index=0,
                             styles={"icon": {"color": "orange", "font-size": "20px"}}
@@ -36,10 +36,7 @@ if menu == 'Home':
 
 if menu == 'Analysis':
 
-    st.markdown(f""" <style>.stApp {{
-                    background: url('https://blog.artonemfg.com/hubfs/airbnb-3399753_1920.jpg');   
-                    background-size: cover}}
-                    </style>""",unsafe_allow_html=True)
+
     
     fig, ax = plt.subplots(figsize=(10, 6))
     ax.hist(df['review_scores_rating'], bins=20, color='skyblue')
@@ -49,3 +46,10 @@ if menu == 'Analysis':
 
     # Display the Matplotlib plot using st.pyplot(), passing the figure explicitly
     st.pyplot(fig)
+
+if menu == "About":
+
+    st.markdown(f""" <style>.stApp {{
+                    background: url('https://blog.artonemfg.com/hubfs/airbnb-3399753_1920.jpg');   
+                    background-size: cover}}
+                    </style>""",unsafe_allow_html=True)
