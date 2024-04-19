@@ -1,8 +1,10 @@
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+
+import plotly.express as px
+
 import streamlit as st
 from streamlit_option_menu import option_menu
+
 
 df = pd.read_csv("C:\\GD\\Notes\\DS Class\\DTM15\\Project\\Guvi project\\4 Airbnb\\AirbnbDataset.csv")
 
@@ -35,17 +37,64 @@ if menu == 'Home':
     
 
 if menu == 'Analysis':
+    st.markdown(f""" <style>.stApp {{
+                background: url('https://media.cntraveller.com/photos/63bd91b73c7bca633cbfe0fb/4:3/w_2400,h_1800,c_limit/airbnb.jpg');   
+                background-size: cover}}
+                </style>""",unsafe_allow_html=True)
 
-
+    with row1[1]:
+        analysis = st.selectbox("", ["1. Country Distribution",
+                                    "2. ",
+                                    "3. ",
+                                    "4. ",
+                                    "5. ",
+                                    "6. ",
+                                    "7. ",
+                                    "8. ",
+                                    "9. ",
+                                    "10. "
+                                    ])
     
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.hist(df['review_scores_rating'], bins=20, color='skyblue')
-    ax.set_xlabel('Review Scores Rating')
-    ax.set_ylabel('Frequency')
-    ax.set_title('Review Scores Rating Distribution')
+    if analysis == "1. Country Distribution":
 
-    # Display the Matplotlib plot using st.pyplot(), passing the figure explicitly
-    st.pyplot(fig)
+        sub_columns = st.columns(2)
+
+        with sub_columns[0]:
+
+            # Assuming df is your DataFrame containing the 'country' column
+            country_counts = df['country'].value_counts().reset_index()
+            country_counts.columns = ['country', 'count']
+
+            # Create a pie chart using Plotly Express
+            fig = px.pie(country_counts, values='count', names='country', title='Country Distribution')
+            fig.update_layout(title_x=0.3)
+            st.plotly_chart(fig)
+    
+
+    if analysis == "2. ":
+
+        sub_columns = st.columns(2)
+
+        with sub_columns[1]:
+                    sub_columns_1 = st.columns(2)
+
+                    with sub_columns_1[1]:
+                        yaxis = st.selectbox("", ['price',
+                                                  "review_scores_rating",
+                                                  "extra_people_fee",                                                  
+                                                ])
+
+        with sub_columns[0]:
+            fig = px.box(df, x='country', y = yaxis, title=f"{yaxis} by Country")
+            fig.update_layout(xaxis_title='Country', yaxis_title = yaxis , xaxis_tickangle=-45)
+            fig.update_layout(title_x=0.35)
+            st.plotly_chart(fig)
+
+
+
+
+
+
 
 if menu == "About":
 
