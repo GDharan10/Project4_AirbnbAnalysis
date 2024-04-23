@@ -54,7 +54,3 @@ The app allows users to select from the following analysis options:
 - Sum of Price and Average Review Scores Rating by Number of Bathrooms
 
 Users can select an analysis option from the sidebar to view the corresponding visualization.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
