@@ -1,5 +1,3 @@
-# Airbnb Analysis
-
 # Airbnb Data Analysis Web App
 
 ![Airbnb Logo](https://static-00.iconduck.com/assets.00/airbnb-icon-512x512-d9grja5t.png)
@@ -29,18 +27,33 @@ This repository contains a Streamlit web app for exploratory data analysis of Ai
 3. Run the Streamlit app:
 
     ```bash
-    streamlit run app.py
+    streamlit run AirbnbAnalysis.py
     ```
 
 4. Access the app in your web browser at `http://localhost:8501`.
 
-## Data Source
+## Files
 
-The Airbnb dataset used in this project is available [here](link-to-your-dataset).
+- `AirbnbAnalysis.py`: Python script containing the Streamlit web app code.
+- `AirbnbDataset.csv`: Dataset used for analysis.
+- `AirbnbDatasetFromMongodb.ipynb`: Jupyter Notebook containing code for extracting data from MongoDB.
 
 ## About
 
-This project is developed as part of an exploratory data analysis project. Contributions and feedback are welcome.
+This Streamlit web app provides an exploratory analysis of Airbnb listing data. The analysis includes various visualizations to understand different aspects of the dataset.
+
+The app allows users to select from the following analysis options:
+
+- Distribution of Listings by Country
+- Price Variation by Selected Feature
+- Frequency of Selected Feature
+- Sum of Price and Beds by Number of Bedrooms
+- Average Price by Cancellation Policy
+- Sum of Price and Beds by Property Type
+- Sum of Price and Guests Included by Cancellation Policy
+- Sum of Price and Average Review Scores Rating by Number of Bathrooms
+
+Users can select an analysis option from the sidebar to view the corresponding visualization.
 
 ## License
 
