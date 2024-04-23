@@ -27,12 +27,33 @@ with row1[0]:
 
 
 if menu == 'Home':
+    st.markdown(f""" <style>
+                    .stApp {{
+                        background: url('https://www.spinxdigital.com/app/uploads/2022/11/image-airbnb.jpg');
+                        background-size: cover;
+                    }}
+                    
+                    </style>""", unsafe_allow_html=True)
 
-    st.markdown(f""" <style>.stApp {{
-                    background: url('https://www.spinxdigital.com/app/uploads/2022/11/image-airbnb.jpg');   
-                    background-size: cover}}
-                 </style>""",unsafe_allow_html=True)
+    st.markdown("<style>h1, h2, h3, p { color: black; font-size: 20px; background-color: lightgrey;}</style>", unsafe_allow_html=True)
+
+    with row1[1]:
+        st.markdown("<div class='home-text'>", unsafe_allow_html=True)  # Add custom CSS class for styling
     
+        st.write("# Welcome to Airbnb Data Analysis")
+
+        st.write("This Streamlit web app allows you to explore Airbnb listing data through interactive visualizations.")
+
+        st.write("You can select different analysis options from the sidebar to gain insights into various aspects of Airbnb listings.")
+
+        st.write("To learn more about this app and its features, visit the 'About' section.")
+
+        st.markdown("</div>", unsafe_allow_html=True)
+ 
+
+    
+
+
 
 if menu == 'Analysis':
     st.markdown(f""" <style>.stApp {{
@@ -119,8 +140,6 @@ if menu == 'Analysis':
             yaxis=dict(title='Sum of Price', side='left', color='blue'),
             yaxis2=dict(title='Sum of Beds', side='right', overlaying='y', color='green')
         )
-
-        # Display the Plotly chart using st.plotly_chart()
         st.plotly_chart(fig)
     
     if analysis == "Average Price by Cancellation Policy":
@@ -177,8 +196,6 @@ if menu == 'Analysis':
             yaxis2=dict(title='Average Review Scores Rating', side='right', overlaying='y', color='green')
         )
 
-        # Display the Plotly charts
-
         st.plotly_chart(bathroom_fig)
 
 
@@ -192,3 +209,28 @@ if menu == "About":
                     background: url('https://blog.artonemfg.com/hubfs/airbnb-3399753_1920.jpg');   
                     background-size: cover}}
                     </style>""",unsafe_allow_html=True)
+    
+    with row1[1]:
+        st.write("# About")
+    
+        st.write("This Streamlit web app provides an exploratory analysis of Airbnb listing data. The analysis includes various visualizations to understand different aspects of the dataset.")
+        
+        st.write("The app allows users to select from the following analysis options:")
+        
+        st.markdown("""
+        <ul>
+            <li style='color:red; font-size:20px; background-color: lightgrey;'>Distribution of Listings by Country</li>
+            <li style='color:red; font-size:20px; background-color: lightgrey;'>Price Variation by Selected Feature</li>
+            <li style='color:red; font-size:20px; background-color: lightgrey;'>Frequency of Selected Feature</li>
+            <li style='color:red; font-size:20px; background-color: lightgrey;'>Sum of Price and Beds by Number of Bedrooms</li>
+            <li style='color:red; font-size:20px; background-color: lightgrey;'>Average Price by Cancellation Policy</li>
+            <li style='color:red; font-size:20px; background-color: lightgrey;'>Sum of Price and Beds by Property Type</li>
+            <li style='color:red; font-size:20px; background-color: lightgrey;'>Sum of Price and Guests Included by Cancellation Policy</li>
+            <li style='color:red; font-size:20px; background-color: lightgrey;'>Sum of Price and Average Review Scores Rating by Number of Bathrooms</li>
+        </ul>
+        """, unsafe_allow_html=True)
+        
+        st.write("Users can select an analysis option from the sidebar to view the corresponding visualization.")
+
+    # Styling the text
+    st.markdown("<style>h1, h2, h3, p { color: black; font-size: 20px; background-color: lightgrey;}</style>", unsafe_allow_html=True)
