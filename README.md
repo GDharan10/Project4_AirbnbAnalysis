@@ -40,7 +40,7 @@ This repository contains a Streamlit web app for exploratory data analysis of Ai
 - `Airbnb_Data_Analysis_Report.pdf`: Airbnb Data Analysis Report providing insights into the analysis findings.
 - **PowerBI Folder**:
     - `Airbnb.pbix`: PowerBI file containing visualization.
-    - `Airbnb_Analysis.png`: Screenshot of the visualization in PowerBI.
+    - `Airbnb_Analysis.png`: Included is an image showcasing the visualization within PowerBI for a quick overview of the insights.
 
 ## About
 
