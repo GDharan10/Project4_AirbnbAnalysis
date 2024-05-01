@@ -37,6 +37,7 @@ This repository contains a Streamlit web app for exploratory data analysis of Ai
 - `AirbnbAnalysis.py`: Python script containing the Streamlit web app code.
 - `AirbnbDataset.csv`: Dataset used for analysis.
 - `AirbnbDatasetFromMongodb.ipynb`: Jupyter Notebook containing code for extracting data from MongoDB.
+- `Airbnb_Data_Analysis_Report.pdf`: Airbnb Data Analysis Report providing insights into the analysis findings.
 
 ## About
 
